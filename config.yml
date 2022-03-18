@@ -7,7 +7,7 @@ database:
   name: db_hh.json
 
 telegram:
-  token: 5254552575:AAEHuI45Hc7_eRr26qdsAx9CJE7bKMTohZs
-  chat_id: "870782327"
+  token:
+  chat_id: ""
 
 job: DevOps
