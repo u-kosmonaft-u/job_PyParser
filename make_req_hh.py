@@ -9,8 +9,8 @@ logging.debug("Try to read config.yml")
 try:
     with open("config.yml", "r") as config:
         cfg = yaml.safe_load(config)
-except Exception as e:
-    print("There is no file as config.yml!")
+except Exception as config_error:
+    print(f"There is no file as config.yml! {config_error}")
 
 logging.basicConfig(filename=cfg['log']['path'],
                     level=cfg['log']['level'],
@@ -53,7 +53,7 @@ def request_hh(url):
             if currency == "USD":
                 vacancy_with_usd.append(only_items[i])
         except Exception as e:
-            logging.error("None type object occurred! It's probably empty salary item in api json answer")
+            logging.error(f"None type object occurred! It's probably empty salary item in api json answer {e}")
     # Checkout that id vacancy already has been added
     logging.debug("Start for cycle to checkout vacancy is new")
     for vacancy in vacancy_with_usd:

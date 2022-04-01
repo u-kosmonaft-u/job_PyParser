@@ -11,16 +11,13 @@ try:
         cfg = yaml.safe_load(config)
 except Exception as e:
     print("There is no file as config.yml!")
-    logging.error("There is no config file!")
+    logging.error(f"There is no config file! {e}")
 
-while True:
+if __name__ == '__main__':
     # Main entrypoint
-    if __name__ == '__main__':
+    while True:
         try:
             req = request_hh('https://api.hh.ru/vacancies')
             time.sleep(3600)
         except Exception as e:
-            logging.debug("Some error occurred in main script" + e)
-
-
-
+            logging.debug(f"Some error occurred in main script! Error: {e}")
