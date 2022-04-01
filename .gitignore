@@ -1,3 +1,4 @@
 .idea
 venv
 db_hh.json
+__pycache__
